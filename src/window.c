@@ -666,6 +666,19 @@ GLFWAPI void glfwSetWindowPosCallback(GLFWwindow* handle, GLFWwindowposfun cbfun
     window->callbacks.pos = cbfun;
 }
 
+GLFWAPI GLFWwindowposfun glfwGetWindowPosCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.pos;
+}
+
 GLFWAPI void glfwSetWindowSizeCallback(GLFWwindow* handle, GLFWwindowsizefun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -677,6 +690,19 @@ GLFWAPI void glfwSetWindowSizeCallback(GLFWwindow* handle, GLFWwindowsizefun cbf
     }
 
     window->callbacks.size = cbfun;
+}
+
+GLFWAPI GLFWwindowsizefun glfwGetWindowSizeCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.size;
 }
 
 GLFWAPI void glfwSetWindowCloseCallback(GLFWwindow* handle, GLFWwindowclosefun cbfun)
@@ -692,6 +718,19 @@ GLFWAPI void glfwSetWindowCloseCallback(GLFWwindow* handle, GLFWwindowclosefun c
     window->callbacks.close = cbfun;
 }
 
+GLFWAPI GLFWwindowclosefun glfwGetWindowCloseCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.close;
+}
+
 GLFWAPI void glfwSetWindowRefreshCallback(GLFWwindow* handle, GLFWwindowrefreshfun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -703,6 +742,19 @@ GLFWAPI void glfwSetWindowRefreshCallback(GLFWwindow* handle, GLFWwindowrefreshf
     }
 
     window->callbacks.refresh = cbfun;
+}
+
+GLFWAPI GLFWwindowrefreshfun glfwGetWindowRefreshCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.refresh;
 }
 
 GLFWAPI void glfwSetWindowFocusCallback(GLFWwindow* handle, GLFWwindowfocusfun cbfun)
@@ -718,6 +770,19 @@ GLFWAPI void glfwSetWindowFocusCallback(GLFWwindow* handle, GLFWwindowfocusfun c
     window->callbacks.focus = cbfun;
 }
 
+GLFWAPI GLFWwindowfocusfun glfwGetWindowFocusCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.focus;
+}
+
 GLFWAPI void glfwSetWindowIconifyCallback(GLFWwindow* handle, GLFWwindowiconifyfun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -729,6 +794,19 @@ GLFWAPI void glfwSetWindowIconifyCallback(GLFWwindow* handle, GLFWwindowiconifyf
     }
 
     window->callbacks.iconify = cbfun;
+}
+
+GLFWAPI GLFWwindowiconifyfun glfwGetWindowIconifyCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.iconify;
 }
 
 GLFWAPI void glfwPollEvents(void)

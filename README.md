@@ -296,6 +296,7 @@ GLFW.
  * Added `glfwSetGamma`, `glfwSetGammaRamp` and `glfwGetGammaRamp` functions and
    `GLFWgammaramp` type for monitor gamma ramp control
  * Added window parameter to `glfwSwapBuffers`
+ * Added a `glfwGet*Callback` for every `glfwSet*Callback`
  * Changed buffer bit depth parameters of `glfwOpenWindow` to window hints
  * Changed `glfwOpenWindow` and `glfwSetWindowTitle` to use UTF-8 encoded
    strings
@@ -478,6 +479,7 @@ skills.
  * yuriks
  * Santi Zupancic
  * Lasse Öörni
+ * Jacob Parker
  * All the unmentioned and anonymous contributors in the GLFW community, for bug
    reports, patches, feedback, testing and encouragement
 

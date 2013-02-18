@@ -367,6 +367,19 @@ GLFWAPI void glfwSetKeyCallback(GLFWwindow* handle, GLFWkeyfun cbfun)
     window->callbacks.key = cbfun;
 }
 
+GLFWAPI GLFWkeyfun glfwGetKeyCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if(!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.key;
+}
+
 GLFWAPI void glfwSetCharCallback(GLFWwindow* handle, GLFWcharfun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -378,6 +391,19 @@ GLFWAPI void glfwSetCharCallback(GLFWwindow* handle, GLFWcharfun cbfun)
     }
 
     window->callbacks.character = cbfun;
+}
+
+GLFWAPI GLFWcharfun glfwGetCharCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.character;
 }
 
 GLFWAPI void glfwSetMouseButtonCallback(GLFWwindow* handle, GLFWmousebuttonfun cbfun)
@@ -393,6 +419,19 @@ GLFWAPI void glfwSetMouseButtonCallback(GLFWwindow* handle, GLFWmousebuttonfun c
     window->callbacks.mouseButton = cbfun;
 }
 
+GLFWAPI GLFWmousebuttonfun glfwGetMouseButtonCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.mouseButton;
+}
+
 GLFWAPI void glfwSetCursorPosCallback(GLFWwindow* handle, GLFWcursorposfun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -404,6 +443,19 @@ GLFWAPI void glfwSetCursorPosCallback(GLFWwindow* handle, GLFWcursorposfun cbfun
     }
 
     window->callbacks.cursorPos = cbfun;
+}
+
+GLFWAPI GLFWcursorposfun glfwGetCursorPosCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.cursorPos;
 }
 
 GLFWAPI void glfwSetCursorEnterCallback(GLFWwindow* handle, GLFWcursorenterfun cbfun)
@@ -419,6 +471,19 @@ GLFWAPI void glfwSetCursorEnterCallback(GLFWwindow* handle, GLFWcursorenterfun c
     window->callbacks.cursorEnter = cbfun;
 }
 
+GLFWAPI GLFWcursorenterfun glfwGetCursorEnterCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.cursorEnter;
+}
+
 GLFWAPI void glfwSetScrollCallback(GLFWwindow* handle, GLFWscrollfun cbfun)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
@@ -430,5 +495,18 @@ GLFWAPI void glfwSetScrollCallback(GLFWwindow* handle, GLFWscrollfun cbfun)
     }
 
     window->callbacks.scroll = cbfun;
+}
+
+GLFWAPI GLFWscrollfun glfwGetScrollCallback(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return window->callbacks.scroll;
 }
 

@@ -343,6 +343,17 @@ GLFWAPI void glfwSetMonitorCallback(GLFWmonitorfun cbfun)
     _glfw.monitorCallback = cbfun;
 }
 
+GLFWAPI GLFWmonitorfun glfwGetMonitorCallback()
+{
+    if (!_glfwInitialized)
+    {
+        _glfwInputError(GLFW_NOT_INITIALIZED, NULL);
+        return NULL;
+    }
+
+    return _glfw.monitorCallback;
+}
+
 GLFWAPI const GLFWvidmode* glfwGetVideoModes(GLFWmonitor* handle, int* count)
 {
     _GLFWmonitor* monitor = (_GLFWmonitor*) handle;

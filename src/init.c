@@ -195,3 +195,7 @@ GLFWAPI void glfwSetErrorCallback(GLFWerrorfun cbfun)
     _glfwErrorCallback = cbfun;
 }
 
+GLFWAPI GLFWerrorfun glfwGetErrorCallback()
+{
+    return _glfwErrorCallback;
+}
