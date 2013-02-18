@@ -1361,7 +1361,7 @@ GLFWAPI void* glfwGetWindowUserPointer(GLFWwindow* window);
  *  callback.
  *  @ingroup window
  *
- *  @sa glfwGetWindowsPosCallback
+ *  @sa glfwGetWindowPosCallback
  */
 GLFWAPI void glfwSetWindowPosCallback(GLFWwindow* window, GLFWwindowposfun cbfun);
 
