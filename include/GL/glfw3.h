@@ -607,7 +607,7 @@ typedef void (* GLFWwindowsizefun)(GLFWwindow*,int,int);
  *  @ingroup window
  *
  *  @sa glfwSetWindowCloseCallback
- *  @sa glfwGetWinodwCloseCallback
+ *  @sa glfwGetWindowCloseCallback
  */
 typedef int (* GLFWwindowclosefun)(GLFWwindow*);
 
